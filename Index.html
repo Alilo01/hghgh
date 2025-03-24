@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كتالوج المنتجات</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        #search {
+            width: 80%;
+            padding: 10px;
+            margin: 20px auto;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .catalog {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .item:hover {
+            transform: scale(1.05);
+        }
+        .item img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <header>كتالوج مطبعة العمامرة</header>
+    <input type="text" id="search" placeholder="🔍 ابحث عن منتج..." onkeyup="searchItems()">
+    <div class="catalog" id="catalog">
+        <div class="item" data-name="T001">
+            <img src="T001.jpg" alt="T001">
+            <h2>T001</h2>
+            <p>📏 العرض: 86</p>
+            <p>📐 الارتفاع: 58</p>
+            <p>🔹 السُمك: 0.4</p>
+        </div>
+        <div class="item" data-name="T002">
+            <img src="T002.jpg" alt="T002">
+            <h2>T002</h2>
+            <p>📏 العرض: 40</p>
+            <p>📐 الارتفاع: 40</p>
+            <p>🔹 السُمك: 1.5</p>
+        </div>
+        <!-- إضافة باقي العناصر مع صورها -->
+		
+        <div class="item" data-name="T003">
+            <img src="T003.jpg" alt="T003">
+            <h2>T003</h2>
+            <p>📏 العرض: 86</p>
+            <p>📐 الارتفاع: 58</p>
+            <p>🔹 السُمك: 0.4</p>
+        </div>
+        <div class="item" data-name="T004">
+            <img src="T004.jpg" alt="T004">
+            <h2>T004</h2>
+            <p>📏 العرض: 40</p>
+            <p>📐 الارتفاع: 40</p>
+            <p>🔹 السُمك: 1.5</p>
+        </div>
+		
+        <div class="item" data-name="T005">
+            <img src="T005.jpg" alt="T005">
+            <h2>T005</h2>
+            <p>📏 العرض: 86</p>
+            <p>📐 الارتفاع: 58</p>
+            <p>🔹 السُمك: 0.4</p>
+        </div>
+        <div class="item" data-name="T006">
+            <img src="T006.jpg" alt="T006">
+            <h2>T006</h2>
+            <p>📏 العرض: 40</p>
+            <p>📐 الارتفاع: 40</p>
+            <p>🔹 السُمك: 1.5</p>
+        </div>
+		
+        <div class="item" data-name="T007">
+            <img src="T007.jpg" alt="T007">
+            <h2>T007</h2>
+            <p>📏 العرض: 86</p>
+            <p>📐 الارتفاع: 58</p>
+            <p>🔹 السُمك: 0.4</p>
+        </div>
+        <div class="item" data-name="T008">
+            <img src="T008.jpg" alt="T008">
+            <h2>T008</h2>
+            <p>📏 العرض: 40</p>
+            <p>📐 الارتفاع: 40</p>
+            <p>🔹 السُمك: 1.5</p>
+        </div>
+    </div>
+    <script>
+        function searchItems() {
+            let input = document.getElementById('search').value.toLowerCase();
+            let items = document.getElementsByClassName('item');
+            
+            for (let i = 0; i < items.length; i++) {
+                let name = items[i].getAttribute('data-name').toLowerCase();
+                if (name.includes(input)) {
+                    items[i].style.display = "block";
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
